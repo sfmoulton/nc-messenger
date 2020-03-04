@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
 class PostMessage extends Component {
- 
+  state = {
+    msg: ""
+  };
+
   //onChange for message input
 
   render() {
     return (
       <div>
         <form>
-          <label> Message:
-            <input type="text"/>
+          <label>
+            Message:
+            <input type="text" />
           </label>
           <button>Send Message</button>
         </form>
