@@ -1,24 +1,28 @@
 import React, { Component } from "react";
 
 class PostMessage extends Component {
-  state = {
-    msg: ""
-  };
 
-  //onChange for message input
+ 
+  state = {message: ''}
+
 
   render() {
     return (
       <div>
-        <form>
-          <label>
-            Message:
-            <input type="text" />
+
+        <form onSubmit={() => {this.props.onSubmit(this.state.message)}}>
+          <label> Message:
+            <input type="text" onChange={this.onChange}/>
+
           </label>
           <button>Send Message</button>
         </form>
       </div>
     );
+  }
+
+  onChange = (e) => {
+    this.setState({message: e.target.value})
   }
 }
 
